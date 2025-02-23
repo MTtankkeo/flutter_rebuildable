@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_rebuildable/flutter_rebuildable.dart';
+import 'package:flutter_rebuildable/widgets/rebuildable_app.dart';
 
 /// The widget that helps in context rebuild a descendant widgets all.
 class Rebuildable extends StatefulWidget {

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_rebuildable/widgets/Rebuildable.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_rebuildable/widgets/rebuildable.dart';
 
 /// The widget that helps globally rebuild widgets all of the application.
 class RebuildableApp extends StatefulWidget {
