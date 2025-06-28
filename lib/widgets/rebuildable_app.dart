@@ -3,10 +3,7 @@ import 'package:flutter_rebuildable/widgets/rebuildable.dart';
 
 /// The widget that helps globally rebuild widgets all of the application.
 class RebuildableApp extends StatefulWidget {
-  const RebuildableApp({
-    super.key,
-    required this.child
-  });
+  const RebuildableApp({super.key, required this.child});
 
   /// Rebuilds the widgets all of the application.
   static late final VoidCallback rebuild;
@@ -28,8 +25,13 @@ class RebuildableApp extends StatefulWidget {
   /// Finds the [RebuildableState] from the closest instance of this class
   /// that encloses the given context.
   static RebuildableAppState of(BuildContext context) {
-    final RebuildableAppState? result = context.findAncestorStateOfType<RebuildableAppState>();
-    assert(result != null, "The result is null. Consider calling the maybeOf function.");
+    final RebuildableAppState? result =
+        context.findAncestorStateOfType<RebuildableAppState>();
+
+    assert(
+      result != null,
+      "The result is null. Consider calling the maybeOf function.",
+    );
     return result!;
   }
 
@@ -45,7 +47,7 @@ class RebuildableAppState extends State<RebuildableApp> {
     super.initState();
 
     RebuildableApp.rebuild = () {
-      for (var callback in callbacks) { callback.call(); }
+      callbacks.forEach((callback) => callback.call());
     };
   }
 

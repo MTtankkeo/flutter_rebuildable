@@ -11,7 +11,7 @@ The following explains the basic usage of this package.
 Using `Rebuildable.of(context)`, you can rebuild only the widgets that are descendants of the given context. This is useful when you need to update a specific portion of your app without affecting the entire widget tree.
 
 ```dart
-Rebuildable.of("context").rebuild();
+Rebuildable.of(context).rebuild();
 ```
 
 ### Global Rebuilding

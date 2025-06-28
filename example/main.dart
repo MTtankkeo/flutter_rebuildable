@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rebuildable/widgets/rebuildable_app.dart';
+import 'package:flutter_rebuildable/flutter_rebuildable.dart';
 
 bool isDark = false;
 
@@ -17,9 +17,7 @@ class TestApp extends StatelessWidget {
         builder: (context) {
           return MaterialApp(
             theme: isDark ? ThemeData.dark() : ThemeData.light(),
-            home: Scaffold(
-              body: TestPage()
-            ),
+            home: Scaffold(body: TestPage()),
           );
         },
       ),
@@ -48,7 +46,7 @@ class TestPage extends StatelessWidget {
               RebuildableApp.rebuild(); // like this
             },
             child: Text("Dark"),
-          )
+          ),
         ],
       ),
     );

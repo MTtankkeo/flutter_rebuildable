@@ -1,6 +1,6 @@
 name: flutter_rebuildable
 description: "This package that provides widgets to help rebuild all descendant widgets or all widgets in the entire application."
-version: 1.0.1
+version: 1.0.2
 repository: "https://github.com/MTtankkeo/flutter_rebuildable"
 
 environment:

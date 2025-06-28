@@ -4,10 +4,7 @@ import 'package:flutter_rebuildable/widgets/rebuildable_app.dart';
 
 /// The widget that helps in context rebuild a descendant widgets all.
 class Rebuildable extends StatefulWidget {
-  const Rebuildable({
-    super.key,
-    required this.child
-  });
+  const Rebuildable({super.key, required this.child});
 
   /// The [child] contained by the [Rebuildable] widget.
   ///
@@ -26,8 +23,13 @@ class Rebuildable extends StatefulWidget {
   /// Finds the [RebuildableState] from the closest instance of this class
   /// that encloses the given context.
   static RebuildableState of(BuildContext context) {
-    final RebuildableState? result = context.findAncestorStateOfType<RebuildableState>();
-    assert(result != null, "The result is null. Consider calling the maybeOf function.");
+    final RebuildableState? result =
+        context.findAncestorStateOfType<RebuildableState>();
+
+    assert(
+      result != null,
+      "The result is null. Consider calling the maybeOf function.",
+    );
     return result!;
   }
 
@@ -49,7 +51,8 @@ class RebuildableState extends State<Rebuildable> {
 
   /// Rebuilds all child widgets in this widget.
   void rebuild() {
-    final isFrameRendering = WidgetsBinding.instance.schedulerPhase != SchedulerPhase.idle;
+    final bool isFrameRendering =
+        WidgetsBinding.instance.schedulerPhase != SchedulerPhase.idle;
 
     // When the post next frame is already scheduled.
     if (isFrameRendering) {
@@ -64,7 +67,6 @@ class RebuildableState extends State<Rebuildable> {
   @override
   void initState() {
     super.initState();
-
     RebuildableApp.maybeOf(context)?.callbacks.add(rebuild);
   }
 
